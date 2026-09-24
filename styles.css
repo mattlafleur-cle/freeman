@@ -60,15 +60,6 @@ img { max-width: 100%; display: block; }
 .btn-ghost:hover { background: var(--navy); color: var(--white); }
 .btn-lg { padding: 16px 32px; font-size: 1.02rem; }
 
-/* ---------- announcement bar ---------- */
-.announce {
-  background: var(--navy); color: var(--gold-bright);
-  text-align: center; font-size: .85rem; font-weight: 600; letter-spacing: .02em;
-  padding: 10px 16px;
-}
-.announce p { margin: 0; color: inherit; }
-.announce strong { color: var(--white); }
-
 /* ---------- header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
