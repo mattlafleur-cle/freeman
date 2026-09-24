@@ -119,14 +119,12 @@ img { max-width: 100%; display: block; }
 .hero-tagline { color: var(--gold-bright); font-weight: 600; font-size: 1rem; }
 .hero-tagline em { font-style: italic; color: var(--white); }
 
-/* hero photo — a product shot (portrait ratio), framed as a rounded card
-   rather than a circle since it's a full tee graphic, not a headshot */
+/* hero photo — circular portrait crop, matching theloushirt.com's hero treatment */
 .hero-art { display: flex; justify-content: flex-start; align-self: start; margin-top: -20px; }
 .hero-photo {
-  width: 100%; max-width: 400px;
-  object-fit: contain; object-position: center center;
-  border-radius: 28px;
-  background: var(--white);
+  width: 100%; max-width: 480px; aspect-ratio: 1 / 1;
+  object-fit: cover; object-position: center 20%;
+  border-radius: 50%;
   border: 3px solid var(--gold);
   box-shadow: 0 0 0 6px rgba(201,169,97,.12), var(--shadow);
 }
