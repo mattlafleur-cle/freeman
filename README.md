@@ -33,10 +33,13 @@ uploaded):
 
 | Product | Price | Status |
 |---|---|---|
-| Leave No Doubt (White) | $33.98 | ✅ live — flagship/hero design |
-| Leave No Doubt (Navy Blue) | $33.98 | ✅ live |
-| Leave No Doubt (Black, chest script) | $33.98 | ✅ live |
+| Leave No Doubt (White) | $21.00 | ✅ live — flagship/hero design |
+| Leave No Doubt (Navy Blue) | $21.00 | ✅ live |
+| Leave No Doubt (Black, chest script) | $21.00 | ✅ live |
 | 6 more listings | — | ⏳ waiting on photos + price/name for each |
+
+Prices last revised 2026-09-24 — the ndshirt.com catalog moved to a flat
+$21.00 across the board (matches theloushirt.com's pricing update).
 
 To add one of the remaining 6:
 

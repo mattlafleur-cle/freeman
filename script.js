@@ -28,7 +28,7 @@ const PRODUCTS = [
   {
     name: 'Leave No Doubt',
     variant: 'White',
-    price: '33.98',
+    price: '21.00',
     tag: 'New',
     url: SHOP_ALL_URL,
     image: 'images/leave-no-doubt-white.webp',
@@ -39,7 +39,7 @@ const PRODUCTS = [
   {
     name: 'Leave No Doubt',
     variant: 'Navy Blue',
-    price: '33.98',
+    price: '21.00',
     tag: 'New',
     url: SHOP_ALL_URL,
     image: 'images/leave-no-doubt-navy.webp',
@@ -50,7 +50,7 @@ const PRODUCTS = [
   {
     name: 'Leave No Doubt',
     variant: 'Black (Chest Script)',
-    price: '33.98',
+    price: '21.00',
     tag: 'New',
     url: SHOP_ALL_URL,
     image: 'images/leave-no-doubt-black.webp',
