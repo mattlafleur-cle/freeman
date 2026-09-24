@@ -14,7 +14,7 @@ site's template.
 
 - `index.html` — page structure/content
 - `styles.css` — all styling (navy/gold ND palette, responsive)
-- `script.js` — product data, countdown timer, mobile nav, scroll animations
+- `script.js` — product data, mobile nav, scroll animations
 
 ## How it integrates with Shopify
 
@@ -107,14 +107,6 @@ python3 -m http.server 8000
 
 ## Customizing
 
-- **Sale banner/name**: currently "Fall Camp Sale," matching what's live
-  on ndshirt.com right now. If the real sale changes name or ends, update
-  the announcement bar text in `index.html`, the countdown label, the FAQ
-  question, and the sticky mobile buy bar (4 places total).
-- **Sale end date**: the countdown always targets "this Friday, 11:59pm
-  local time." If your sale end date is fixed regardless of day-of-week,
-  replace the logic in `initCountdown()` in `script.js` with a hard-coded
-  `new Date('2026-XX-XXT23:59:59')`-style target.
 - **Colors/fonts**: all in the `:root` variables at the top of `styles.css`.
 - **Legal**: a small disclaimer is included in the footer/FAQ noting this
   is an independent fan tribute, not officially licensed by the University
