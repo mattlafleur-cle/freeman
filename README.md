@@ -24,28 +24,32 @@ You don't need any API keys for this to work — **"Shop Now" buttons** open
 size, and check out exactly as they do today. Nothing about your existing
 checkout changes.
 
-### The current lineup (3 of 9 listings wired in)
+### The current lineup (all 9 listings wired in)
 
-`PRODUCTS` in `script.js` holds the catalog shown on the site. You said
-there are **9 shirts total** in the collection you're promoting, but only
-**3 have confirmed photos and copy so far** (from the screenshots you
-uploaded):
+`PRODUCTS` in `script.js` holds the full catalog shown on the site — all
+9 "Leave No Doubt" colorways/designs, matching the complete ndshirt.com
+lineup:
 
 | Product | Price | Status |
 |---|---|---|
 | Leave No Doubt (White) | $21.00 | ✅ live — flagship/hero design |
 | Leave No Doubt (Navy Blue) | $21.00 | ✅ live |
 | Leave No Doubt (Black, chest script) | $21.00 | ✅ live |
-| 6 more listings | — | ⏳ waiting on photos + price/name for each |
+| Leave No Doubt (Forest Green, chest script) | $21.00 | ✅ live |
+| Leave No Doubt (Forest Green, shield) | $21.00 | ✅ live |
+| Leave No Doubt (Navy Blue, chest script) | $21.00 | ✅ live |
+| Leave No Doubt (Navy Blue, shield) | $21.00 | ✅ live |
+| Leave No Doubt (Heather Gray) | $21.00 | ✅ live |
+| Leave No Doubt (White-Gray) | $21.00 | ✅ live |
 
 Prices last revised 2026-09-24 — the ndshirt.com catalog moved to a flat
 $21.00 across the board (matches theloushirt.com's pricing update).
 
-To add one of the remaining 6:
+To add a new design/colorway if one launches later:
 
-1. Upload the product photo (or a screenshot of its Shopify product page,
-   same as the first 3) to this repo.
-2. Crop/resize it the same way as the existing three (trim to just the
+1. Upload the product photo (or a screenshot of its Shopify catalog/product
+   page) to this repo.
+2. Crop/resize it the same way as the existing ones (trim to just the
    shirt, ~900px on the long side, save as `.webp` in `images/`).
 3. Add one object to the `PRODUCTS` array at the top of `script.js` with
    its `name`, `variant`, `price`, and `image` path — nothing else in the
@@ -53,13 +57,15 @@ To add one of the remaining 6:
 
 ### Product photos
 
-The 3 live listings were cropped from full-page screenshots of the actual
-Shopify product pages (`1.jpg`, `3.jpg`, `4.jpg` in the repo root — trimmed
-to just the shirt, resized to ~900px, saved as `.webp` in `images/`). The
-header logo/favicon (`images/logo-freeman-shirt.png`,
-`images/favicon-freeman-shirt.png`) were cropped from the same screenshots'
-circular "ND" mark and are naturally a bit soft since the source is small
-— swap in a higher-resolution logo export if you have one.
+The first 3 listings (White, Navy Blue, Black chest script) were cropped
+from full-page screenshots of their individual Shopify product pages. The
+remaining 6 were cropped directly from a screenshot of the ndshirt.com
+catalog grid page instead (smaller source tiles, but still resized to
+~900px and clean at the sizes used on this site). The header logo/favicon
+(`images/logo-freeman-shirt.png`, `images/favicon-freeman-shirt.png`) were
+cropped from a screenshot's circular "ND" mark and are naturally a bit
+soft since the source is small — swap in a higher-resolution logo export
+if you have one.
 
 ## Where to host it
 

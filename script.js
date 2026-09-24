@@ -14,12 +14,9 @@
 // the catalog elsewhere, or somewhere else entirely.
 const SHOP_ALL_URL = 'https://ndshirt.com/collections/all';
 
-// The current lineup. Only 3 of the 9 "Leave No Doubt" listings are
-// wired in so far — these are the ones with confirmed photos + copy.
-// Add a row here for each remaining shirt once its photo and price are
-// available (drop the cropped photo in images/, point `image` at it) —
-// nothing else in this file needs to change, the grid re-renders
-// automatically from this list.
+// The full current lineup — all 9 "Leave No Doubt" listings. Add a row
+// here if a new colorway ever launches; nothing else in this file needs
+// to change, the grid re-renders automatically from this list.
 //
 // `image` is the real product photo (in images/); `design`/`shirt`/`ink`
 // are only used as a fallback if a product has no photo yet — see
@@ -57,6 +54,72 @@ const PRODUCTS = [
     design: 'leave-no-doubt',
     shirt: '#111111',
     ink: '#c9a961'
+  },
+  {
+    name: 'Leave No Doubt',
+    variant: 'Forest Green (Chest Script)',
+    price: '21.00',
+    tag: 'New',
+    url: SHOP_ALL_URL,
+    image: 'images/leave-no-doubt-forest-green-chest.webp',
+    design: 'leave-no-doubt',
+    shirt: '#1e3d24',
+    ink: '#c9a961'
+  },
+  {
+    name: 'Leave No Doubt',
+    variant: 'Forest Green (Shield)',
+    price: '21.00',
+    tag: 'New',
+    url: SHOP_ALL_URL,
+    image: 'images/leave-no-doubt-forest-green-shield.webp',
+    design: 'leave-no-doubt',
+    shirt: '#1e3d24',
+    ink: '#c9a961'
+  },
+  {
+    name: 'Leave No Doubt',
+    variant: 'Navy Blue (Chest Script)',
+    price: '21.00',
+    tag: 'New',
+    url: SHOP_ALL_URL,
+    image: 'images/leave-no-doubt-navy-chest.webp',
+    design: 'leave-no-doubt',
+    shirt: '#0d1b3f',
+    ink: '#c9a961'
+  },
+  {
+    name: 'Leave No Doubt',
+    variant: 'Navy Blue (Shield)',
+    price: '21.00',
+    tag: 'New',
+    url: SHOP_ALL_URL,
+    image: 'images/leave-no-doubt-navy-shield.webp',
+    design: 'leave-no-doubt',
+    shirt: '#0d1b3f',
+    ink: '#c9a961'
+  },
+  {
+    name: 'Leave No Doubt',
+    variant: 'Heather Gray',
+    price: '21.00',
+    tag: 'New',
+    url: SHOP_ALL_URL,
+    image: 'images/leave-no-doubt-heather-gray.webp',
+    design: 'leave-no-doubt',
+    shirt: '#b8b8b8',
+    ink: '#0d1b3f'
+  },
+  {
+    name: 'Leave No Doubt',
+    variant: 'White-Gray',
+    price: '21.00',
+    tag: 'New',
+    url: SHOP_ALL_URL,
+    image: 'images/leave-no-doubt-white-gray.webp',
+    design: 'leave-no-doubt',
+    shirt: '#f7f4ec',
+    ink: '#0d1b3f'
   }
 ];
 
