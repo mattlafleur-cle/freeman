@@ -1,122 +1,71 @@
-# Leave No Doubt — Marcus Freeman Tribute Collection
+# Leave No Doubt: Freeman Tribute Collection Landing Page
 
-A standalone marketing/landing site for the Marcus Freeman "Leave No Doubt"
-tribute t-shirt line, built to sit **alongside** your existing Shopify
-store at [ndshirt.com](https://ndshirt.com) — it spotlights the collection
-and hands off to Shopify for actual size selection, cart, and checkout.
+A one-page brand landing site for the Marcus Freeman "Leave No Doubt"
+tribute t-shirts, served at **thefreemanshirt.com** from GitHub Pages
+(deploys from `main`). Shopping happens on the ndshirt.com Shopify store;
+this page explains the designs and links to the exact products.
 
-This is a sibling site to [theloushirt.com](https://theloushirt.com) (the
-Lou Holtz tribute collection) — same structure, same plain HTML/CSS/JS, no
-build step, no framework, no dependencies. It was seeded directly from that
-site's template.
+Sibling site: theloushirt.com (`mattlafleur-cle/lou`), same structure.
+
+Plain HTML/CSS/JS. No build step, no framework, no dependencies.
 
 ## Files
 
-- `index.html` — page structure/content
-- `styles.css` — all styling (navy/gold ND palette, responsive)
-- `script.js` — product data, mobile nav, scroll animations
+- `index.html`: all page content, including the static product grid
+- `styles.css`: styling (navy/gold palette, responsive, self-hosted fonts)
+- `script.js`: mobile menu, scroll reveal, optional click events
+- `robots.txt`, `sitemap.xml`, `404.html`: search and error handling
+- `fonts/`: Inter and Playfair Display (SIL Open Font License)
+- `images/opt/`: optimized, resized images actually used by the page;
+  originals in `images/` are kept as sources
 
 ## How it integrates with Shopify
 
-You don't need any API keys for this to work — **"Shop Now" buttons** open
-`ndshirt.com/collections/all` in a new tab (see `SHOP_ALL_URL` in
-`script.js`) — shoppers land on your real Shopify catalog to pick a design,
-size, and check out exactly as they do today. Nothing about your existing
-checkout changes.
+- Each product card links to its exact ndshirt.com product page.
+- Collection-wide buttons go to `ndshirt.com/collections/marcus-freeman`.
+- Outbound links carry `utm_source=thefreemanshirt.com` so Shopify
+  Analytics can attribute visits and orders, plus a `data-track` label
+  for optional click events (see `script.js`).
 
-### The current lineup (all 9 listings wired in)
+### Product-to-destination mapping
 
-`PRODUCTS` in `script.js` holds the full catalog shown on the site — all
-9 "Leave No Doubt" colorways/designs, matching the complete ndshirt.com
-lineup:
+Verified against the live ndshirt.com catalog on 2026-10-23.
 
-| Product | Price | Status |
-|---|---|---|
-| Leave No Doubt (White) | $21.00 | ✅ live — flagship/hero design |
-| Leave No Doubt (Navy Blue) | $21.00 | ✅ live |
-| Leave No Doubt (Black, chest script) | $21.00 | ✅ live |
-| Leave No Doubt (Forest Green, chest script) | $21.00 | ✅ live |
-| Leave No Doubt (Forest Green, shield) | $21.00 | ✅ live |
-| Leave No Doubt (Navy Blue, chest script) | $21.00 | ✅ live |
-| Leave No Doubt (Navy Blue, shield) | $21.00 | ✅ live |
-| Leave No Doubt (Heather Gray) | $21.00 | ✅ live |
-| Leave No Doubt (White-Gray) | $21.00 | ✅ live |
+| Design (page section) | Shopify title | Product URL | Sizes |
+|---|---|---|---|
+| Portrait Poster | Leave No Doubt (White) | `/products/marcus-leave-no-doubt-white-2026` | XS to 5XL |
+| Portrait Poster | Leave No Doubt (Heather gray) | `/products/marcus-leave-no-doubt-heather-gray` | XS to 5XL |
+| Sideline Portrait | Leave No Doubt (Navy blue) | `/products/marcus-leave-no-doubt-navy-blue` | XS to 5XL |
+| Sideline Portrait | Leave No Doubt (White-gray) | `/products/marcus-leave-no-doubt-white` | XS to 5XL |
+| 2026 Script | Leave No Doubt (Black chest) | `/products/leave-no-doubt-black-chest` | XS to 5XL |
+| 2026 Script | Leave No Doubt (Forest green chest) | `/products/leave-no-doubt-forest-green-chest` | S to 4XL |
+| 2026 Script | Leave No Doubt (Navy blue chest) | `/products/leave-no-doubt-navy-blue-chest` | XS to 5XL |
+| Chest Shield | Leave No Doubt (Forest green shield) | `/products/leave-no-doubt-forest-green-shield` | S to 4XL |
+| Chest Shield | Leave No Doubt (Navy blue shield) | `/products/leave-no-doubt-navy-blue-shield` | XS to 5XL |
 
-Prices last revised 2026-09-24 — the ndshirt.com catalog moved to a flat
-$21.00 across the board (matches theloushirt.com's pricing update).
+Note the handle `marcus-leave-no-doubt-white` is the **White-gray**
+product; the plain **White** product is `...-white-2026`.
 
-To add a new design/colorway if one launches later:
+Every product uses the same size price ladder: XS and S $21, M $24,
+L to 2XL $26, 3XL and up $29. If Shopify prices or sizes change, update
+the cards, the price note, the FAQ, and the meta description.
 
-1. Upload the product photo (or a screenshot of its Shopify catalog/product
-   page) to this repo.
-2. Crop/resize it the same way as the existing ones (trim to just the
-   shirt, ~900px on the long side, save as `.webp` in `images/`).
-3. Add one object to the `PRODUCTS` array at the top of `script.js` with
-   its `name`, `variant`, `price`, and `image` path — nothing else in the
-   file needs to change, the grid re-renders automatically from that list.
+### Adding a design or colorway
 
-### Product photos
+Copy one `<article class="product-card">` block in `index.html` into the
+right design group and update its image, alt text, color line, sizes,
+and product URL. Save 400px and full-width WebP versions of the photo
+into `images/opt/` and keep the `width`/`height` attributes.
 
-The first 3 listings (White, Navy Blue, Black chest script) were cropped
-from full-page screenshots of their individual Shopify product pages. The
-remaining 6 were cropped directly from a screenshot of the ndshirt.com
-catalog grid page instead (smaller source tiles, but still resized to
-~900px and clean at the sizes used on this site). The header logo/favicon
-(`images/logo-freeman-shirt.png`, `images/favicon-freeman-shirt.png`) were
-cropped from a screenshot's circular "ND" mark and are naturally a bit
-soft since the source is small — swap in a higher-resolution logo export
-if you have one.
+## Hosting
 
-## Where to host it
-
-Hosted on **GitHub Pages**, pointed at the custom domain
-**thefreemanshirt.com**. The repo already has the `CNAME` file GitHub
-Pages needs; the remaining setup is DNS at your registrar — this is the
-exact same process used for theloushirt.com:
-
-1. Log into your domain registrar's DNS management for thefreemanshirt.com.
-2. Add four **A** records so the bare domain points at GitHub Pages:
-
-   | Type | Name | Points to |
-   |---|---|---|
-   | A | @ | 185.199.108.153 |
-   | A | @ | 185.199.109.153 |
-   | A | @ | 185.199.110.153 |
-   | A | @ | 185.199.111.153 |
-
-3. Add one **CNAME** record so `www.thefreemanshirt.com` also works:
-
-   | Type | Name | Points to |
-   |---|---|---|
-   | CNAME | www | mattlafleur-cle.github.io |
-
-4. Remove/replace any existing A or CNAME record already sitting on `@` or
-   `www` (e.g. a registrar's default parking-page record) — only one
-   record set per name is allowed. **Watch out for a stray AAAA record**
-   on `@` too (some registrars add one by default) — delete it if present,
-   it caused exactly this kind of "site won't load" issue on theloushirt.com.
-5. Back in GitHub: **Settings → Pages** on this repo should already show
-   `thefreemanshirt.com` as the custom domain (from the `CNAME` file). Once
-   DNS propagates (minutes to a few hours), it'll show "DNS check
-   successful" — then check **Enforce HTTPS** once it becomes available
-   (certificate issuance can take a while after DNS passes; this is normal).
-
-DNS changes can take anywhere from a few minutes to 24-48 hours to fully
-propagate. Until then, `https://mattlafleur-cle.github.io/freeman/` keeps
-working as before.
+GitHub Pages with the custom domain in `CNAME`; DNS for
+thefreemanshirt.com points at GitHub Pages. `www` and `http` redirect to
+`https://thefreemanshirt.com/`.
 
 ## Local preview
-
-No build tools needed — just open `index.html` in a browser, or serve it:
 
 ```bash
 python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
-
-## Customizing
-
-- **Colors/fonts**: all in the `:root` variables at the top of `styles.css`.
-- **Legal**: a small disclaimer is included in the footer/FAQ noting this
-  is an independent fan tribute, not officially licensed by the University
-  of Notre Dame — worth keeping given ND's trademarks.
