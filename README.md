@@ -69,3 +69,11 @@ thefreemanshirt.com points at GitHub Pages. `www` and `http` redirect to
 python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
+
+## IndexNow
+
+`0dda8c5b377574c5cbbc210d71f20a31.txt` at the site root is the IndexNow key file. It proves to Bing
+and other IndexNow search engines that this site may notify them when
+pages change. Keep the file name and contents unchanged. To notify after
+publishing an update, open:
+`https://api.indexnow.org/indexnow?url=https://thefreemanshirt.com/&key=0dda8c5b377574c5cbbc210d71f20a31`
